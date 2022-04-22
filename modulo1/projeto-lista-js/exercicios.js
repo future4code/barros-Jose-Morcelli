@@ -121,7 +121,7 @@ return array
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
   // implemente sua lógica aqui
 
-const valorBoleano = string1 === string2
+const valorBoleano = (string1 === string2).toLowerCase()
 return valorBoleano
 
 }
