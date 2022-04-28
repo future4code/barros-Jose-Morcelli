@@ -84,9 +84,15 @@ console.log (listaDeTarefas)
 //----------Desafios-------
 
 //1. Receba uma frase e retorne um array onde cada elemento é uma das palavras da frase, ignorando os espaços
+<<<<<<< HEAD
+let fraseUsuario = prompt("Digite uma bela frase!").trim
+console.log (fraseUsuario)
+let resultadoFrase= [fraseUsuario,fraseUsuario]
+=======
 frase = prompt("Digite uma bela frase!").trim
 console.log (frase)
 let resultadoFrase= [frase,frase]
+>>>>>>> 79fef98f0d48f90751c8d5018b0238b2d2cc09b9
 console.log(resultadoFrase)
 
 //2. Dado o array `["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"]`, faça um programa 
