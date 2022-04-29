@@ -41,8 +41,11 @@
      apelidos: ["Carlinhos","Carlão","Carlin"]
 
  }
-console.log(`Eu sou ${pessoa.nome}, mas pode me chamar de: ${pessoa.apelidos[0]},${pessoa.apelidos[1]}
- ou de ${pessoa.apelidos[2]}`)
+
+console.log(frase(`Eu sou ${pessoa.nome}, mas pode me chamar de: ${pessoa.apelidos[0]},${pessoa.apelidos[1]}
+ ou de ${pessoa.apelidos[2]}`))
+
+
 
  //b) Agora, usando o operador spread, crie um novo objeto mantendo o valor da propriedade nome, mas com uma nova 
 //lista de três apelidos. Depois, chame a função feita no item anterior passando como argumento o novo objeto
@@ -52,6 +55,7 @@ const pessoa2={
     nome: "Marcos",
     apelidos: ["Marquinhos","Marcão","Marquin"]
 }
+
 console.log(`Eu sou ${pessoa2.nome}, mas pode me chamar de: ${pessoa2.apelidos[0]},${pessoa2.apelidos[1]}
  ou de ${pessoa2.apelidos[2]}`)
 
