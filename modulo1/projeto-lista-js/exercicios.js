@@ -69,6 +69,7 @@ console.log (lista)
 // EXERCÍCIO 06
 function retornaStringEmMaiuscula(string) {
   // implemente sua lógica aqui
+
  string = prompt("Digite uma palavra minuscula :").toUpperCase()
 
  return string
@@ -87,51 +88,71 @@ return resultado
 function checaStringsMesmoTamanho(string1, string2) {
   // implemente sua lógica aqui
 
+
 const tamanho1=string1.length
 console.log (tamanho1)
 const tamanho2=string2.length
 console.log(tamanho2)
 let compareStrings= tamanho1 === tamanho2
 return compareStrings
+
+
 }
 
 // EXERCÍCIO 09
 function retornaPrimeiroElemento(array) {
   // implemente sua lógica aqui
+
 return array[0]
+
+
+
 }
 
 // EXERCÍCIO 10
 function retornaUltimoElemento(array) {
   // implemente sua lógica aqui
+
 return array[array.length -1]
+
+
 
 }
 
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
+
 const ultimoElemento= array.length -1
 let novaArray = array.splice(0,1, array[ultimoElemento])
 array.splice(ultimoElemento,1, novaArray[0])
 return array
+
+
+
 }
 
 // EXERCÍCIO 12
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
   // implemente sua lógica aqui
 
+
 const valorBoleano = (string1 === string2).toLowerCase()
 return valorBoleano
+
+
 
 }
 
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
+
 let anoAtual =prompt("Qual o ano atual que estamos?")
 let anoUsuario =prompt("Qual o seu ano de nascimento?")
 let anoRG =prompt("Quando o seu RG foi emitido?")
+
+
 
 }
 
