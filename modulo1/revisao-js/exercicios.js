@@ -15,7 +15,12 @@ function retornaArrayInvertido(array) {
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-  
+  const arrayEmOrdem= array.sort((a ,b) => {
+if(a > b){
+    return a
+}
+  })
+  return arrayEmOrdem
 }
 
 // EXERCÍCIO 04
