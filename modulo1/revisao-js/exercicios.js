@@ -33,7 +33,13 @@ return numerosPares
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-    
+    let valoresNovaArray=[]
+    array.filter((numero)=>{
+        if (numero % 2 === 0){
+            valoresNovaArray.push(numero ** 2)
+        }
+    })
+    return  valoresNovaArray
 }
 
 // EXERCÍCIO 06
