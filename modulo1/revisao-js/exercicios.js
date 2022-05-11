@@ -15,7 +15,7 @@ function retornaArrayInvertido(array) {
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-  const arrayEmOrdem= array.sort((a ,b) => {
+  const arrayEmOrdem = array.sort((a ,b) => {
 if(a > b){
     return a
 }
@@ -25,12 +25,15 @@ if(a > b){
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+    const numerosPares = array.filter((numero)=>{
+        return (numero % 2 === 0)
+})
+return numerosPares
 }
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+    
 }
 
 // EXERCÍCIO 06
