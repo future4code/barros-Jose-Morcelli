@@ -56,8 +56,7 @@ if(num1 > num2){
   numeroMenor = num2
 }else{ numeroMaior = num2
   numeroMenor = num1
-}
-return {
+}return {
    maiorNumero: numeroMaior,
    maiorDivisivelPorMenor: numeroMaior % numeroMenor === 0 ? true:false,
    diferenca: numeroMaior - numeroMenor
@@ -66,7 +65,12 @@ return {
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+   paresN= [0]
+   i=0
+   while(paresN.length < n){ i+=2
+     paresN.push(i)
+   }
+   return paresN
 }
 
 // EXERCÍCIO 09
