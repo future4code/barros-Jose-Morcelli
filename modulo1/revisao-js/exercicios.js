@@ -111,7 +111,7 @@ function retornaPessoaAnonimizada(pessoa) {
     ...pessoa,
     nome:"ANÔNIMO"
   } 
-  return novaPessoa
+  return novaPessoa 
 
 }
 
@@ -119,18 +119,21 @@ function retornaPessoaAnonimizada(pessoa) {
 function retornaPessoasAutorizadas(pessoas) {
    let permissaoParaEntrar=[]
    for(let pessoa of pessoas){
-     if((pessoa.idade >14 && pessoa.idade <=60) && pessoa.altura >=1.5){
+     if((pessoa.idade <=60 && pessoa.idade >14) && pessoa.altura >=1.5){
        permissaoParaEntrar.push(pessoa)
      }
    }
-   return permissaoParaEntrar   
-}
-
-
+   return permissaoParaEntrar   }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+  let semPermissaoParaEntrar=[]
+   for(let pessoa of pessoas){
+     if((pessoa.idade >=60 || pessoa.idade <= 14) || pessoa.altura < 1.5){
+       semPermissaoParaEntrar.push(pessoa)
+     }
+   }
+   return semPermissaoParaEntrar
 }
 
 // EXERCÍCIO 14
