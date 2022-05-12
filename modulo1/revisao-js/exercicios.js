@@ -86,7 +86,13 @@ if(ladoB === ladoA && ladoB === ladoC && ladoA === ladoC){
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+  function arrayEmOrdem(a,b){
+    return a-b
+  }
+  array.sort(arrayEmOrdem)
+  segundoMaior= array[array.length-2]
+  segundoMenor= array[1]
+  return [segundoMaior,segundoMenor]
 }
 
 // EXERCÍCIO 11
