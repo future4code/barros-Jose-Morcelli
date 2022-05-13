@@ -44,7 +44,7 @@ function retornaNumerosParesElevadosADois(array) {
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
+
 }
 
 // EXERCÍCIO 07
@@ -143,7 +143,14 @@ function retornaContasComSaldoAtualizado(contas) {
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+  consultas.sort((a,b)=>{
+    if(a.nome<b.nome){
+      return -1
+    }else{
+      return true
+    }
+  })
+  return consultas
 }
 
 // EXERCÍCIO 15B
