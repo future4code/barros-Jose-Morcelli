@@ -49,7 +49,7 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-let numeroMaior
+let numeroMaior 
 let numeroMenor 
 if(num1 > num2){
   numeroMaior = num1
