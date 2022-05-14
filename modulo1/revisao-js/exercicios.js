@@ -138,7 +138,9 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+let saldo = contas.map((item)=>{
+  
+})
 }
 
 // EXERCÍCIO 15A
