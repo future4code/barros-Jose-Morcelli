@@ -49,7 +49,7 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-let numeroMaior
+let numeroMaior 
 let numeroMenor 
 if(num1 > num2){
   numeroMaior = num1
@@ -138,7 +138,9 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+let saldo = contas.map((item)=>{
+  
+})
 }
 
 // EXERCÍCIO 15A
