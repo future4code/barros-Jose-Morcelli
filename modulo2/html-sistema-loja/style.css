@@ -1,0 +1,64 @@
+body{
+    background-color: #f6f5f5;
+    margin-right: 0px;
+    padding: 0px;
+    
+}
+div{
+    text-align: center;
+    background-color: grey;
+}
+
+section{
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: white;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+    padding: 0px 5%;
+}
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul li a{
+    margin: 90px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+footer{
+    text-align: center;
+}
+
+/* estoque */
+
+.estoq{
+    background-color: silver;
+}
+
+.fun{
+    background-color: silver;
+}
+
+form{
+    background-color: silver;
+}
