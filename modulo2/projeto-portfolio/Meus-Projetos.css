@@ -12,13 +12,8 @@ a{
     text-decoration: none;
 }
 
-.segunda-tag{
-    width: 100%;
-    height: 100vh;
-    background-image: url(img/fundo-abstrato.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+.segunda-tag-1{
+    background-color: silver;
 }
 
 nav{
@@ -58,27 +53,19 @@ nav ul li a {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
     font-size: 50px;
-    text-align: center;
-}
-
-.projeto-foto-1{
-    width: 100px;
-    height: 100px;
-    margin: 0px 100px;
-    
-}
-.pjt-1{
-    text-align: center;
 }
 
 .titulo-projeto{
-    text-align: center;
+    
     font-size: 30px;
 }
 
 .descricao-projeto{
+    font-size: 25px;   
+}
+
+section{
     text-align: center;
-    font-size: 25px;
 }
 
 footer{
