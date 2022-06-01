@@ -1,0 +1,61 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+header{
+    width: 100%;
+    height: 50px;
+    background-color: mediumvioletred;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header h2, button, img{
+    margin: 0 10px;
+}
+
+.logo-bolo{
+    width: 5%;
+}
+
+main{
+    
+    display: flex;
+}
+nav {
+    width: 20%;
+    height: 100%;
+    background: #f2d0e0;
+}
+
+nav ul li img {
+    
+    height: 30px;
+    
+}
+
+section {
+    display: flex;
+    border-radius: 10px;
+    
+  }
+.produto img{
+    width: 100%;
+    
+}
+.produto{
+    text-align: center;
+    width: 100%;
+}
+footer{
+    text-align: center;
+    background-color: mediumvioletred ;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
