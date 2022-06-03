@@ -1,0 +1,87 @@
+body{
+    background-color: #f6f5f5;
+    margin-right: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.segunda-tag{
+   
+    background-color: silver;
+    
+    
+    
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: white ;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2) ;
+    padding: 0px 5%;
+}
+
+nav ul{
+    display: flex;
+}
+ 
+nav ul li a {
+    margin: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: grey;
+    font-size: 15px;
+    font-weight: 700;
+}
+    
+.logo{
+    font-family: arial black;
+    color: black;
+    font-size: 30px;
+}
+
+.active-1{
+    font-weight: bold;
+    color: blue;
+}
+
+.conteudo-sobre{
+    text-align: center;
+}
+
+.sobre-1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    font-size: 60px;
+}
+
+.sobre-2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+.sobre-3, .sobre-4{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 23px;
+    margin: 40px 150px;
+}
+
+
+
+.Eu-foto{
+    width: 280px;
+    height: 350px;
+    margin: -25px 0px;
+}
+
+footer{
+    text-align: center;
+}

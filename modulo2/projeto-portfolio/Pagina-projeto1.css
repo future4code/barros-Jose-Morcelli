@@ -1,0 +1,82 @@
+body{
+    background-color: #f6f5f5;
+    margin-right: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.segunda-tag{
+    
+    background-color: silver;
+    
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: white ;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2) ;
+    padding: 0px 5%;
+}
+
+nav ul{
+    display: flex;
+}
+ 
+nav ul li a {
+    margin: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: grey;
+    font-size: 15px;
+    font-weight: 700;
+}
+    
+.logo{
+    font-family: arial black;
+    color: black;
+    font-size: 30px;
+}
+
+.active-2{
+    font-weight: bold;
+    color: orange;
+}
+
+.Projetos-1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    font-size: 50px;
+    text-align: center;
+}
+
+.projeto-foto-1{
+    width: 100px;
+    height: 100px;
+    
+}
+.pjt-1{
+    text-align: center;
+}
+
+.titulo-projeto{
+    text-align: center;
+    font-size: 30px;
+}
+
+.descricao-projeto{
+    text-align: center;
+    font-size: 25px;
+}
+
+footer{
+    text-align: center;
+}
