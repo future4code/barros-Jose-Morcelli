@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: rgb(255, 102, 0);
+    display: grid;
+    grid-template-columns: 80% 20%;
+    justify-items: start;
+    width: 100%;
+    padding: 15px ;
+    
+}
+
+input{
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50px;
+    font-size: 15px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+p{
+    display: grid;
+    justify-items: center;
+    font-size: 30px;
+}
+
+object{
+    display: block;
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+}
+
+footer{
+    background-color: rgb(64, 64, 97);
+    color: white;
+    justify-items: start;  
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
