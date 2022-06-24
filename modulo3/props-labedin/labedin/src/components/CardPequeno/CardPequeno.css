@@ -1,0 +1,21 @@
+.Card-Pequeno {
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    height: 100px;
+}
+
+.Card-Pequeno > img {
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+
+.Card-Pequeno > div {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}
