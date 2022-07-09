@@ -34,22 +34,59 @@ display: flex;
 justify-content: center;
 bottom: 30px;
 position: fixed;
-left: 34%;
+left: 29%;
 input{
-margin-left: 5px;
-width: 130px;
-height: 15px;
-border-radius: 7px;
+    margin-left: 5px;
+    border-radius: 7px;
+}
+input:nth-child(1){
+    width: 80px;
+}
+input:nth-child(2){
+    width: 350px;
 }
 button{
-bottom: 45px;
-position: fixed;
-left: 64%;
+bottom: 50px;
+margin-left: 10px;
+left: 65%;
 border-radius: 7px;
-border: 0px none;
+border: 5px none;
 }
 `
 
+export const JanelaDeMensagem=styled.div`
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+border: 1px solid black;
+height: 82vh;
+box-sizing: border-box;
+width: 700px;
+margin: auto;
+
+ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 10px;
+    width: 10vw;
+    list-style: none;
+}
+li{
+    display: flex;
+        align-items: center;
+        
+        padding-right: 2vw;
+}
+p:nth-child(1){
+    font-weight: bold;
+}
+p{
+    margin-left:1vw;
+        text-align: left;
+        
+}
+`
 
 export const FimDePg=styled.footer`
   background-color: lightgrey;

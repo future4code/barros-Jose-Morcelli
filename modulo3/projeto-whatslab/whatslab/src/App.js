@@ -1,27 +1,62 @@
 import logo from "./logo.png"
 import './App.css';
 import Cabecalho from './components/Cabecalho';
-import { Cabeca, FimDePg, InicioDePg, InputGeral, Lateraisd, LateraisE, LateralD, LateralE, Rodap } from './components/style';
+import { FimDePg, InicioDePg, InputGeral, JanelaDeMensagem, LateralD, LateralE, MensagensNaJanela } from './components/style';
 import Rodape from "./components/Rodape";
-import InputRemetente from "./components/InputRemetente";
-import InputMsg from "./components/InputMsg";
-import Button from "./components/Button";
+
+import { useState } from "react";
 
 
 
 function App() {
+
+  const [remetente, setRemetente]=useState("")
+  const [mensagem, setMensagem]=useState("")
+  const [listaMensagens, setListaMensagens]=useState([
+    {rmt: remetente, msg: mensagem},
+  ])
+
+  const historico = listaMensagens.map((valor, index)=>{
+    return <li key={index}><p>{valor.rmt}:</p><p>{valor.msg}</p></li>
+  })
+
+  const handleInputRemetente= (e)=>{
+    setRemetente(e.target.value)
+  }
+
+  const handleInputMensagem= (e)=>{
+    setMensagem(e.target.value)
+  }
+
+  const handleSubmit= (e)=>{
+    e.preventDefault()
+    const novasMensagens= [...listaMensagens, {rmt: remetente, msg: mensagem}]
+    setListaMensagens(novasMensagens)
+    setRemetente("")
+    setMensagem("")
+
+  }
+
  return (
   <div className='App'>
     <InicioDePg>
       <Cabecalho imagem={logo} alt="logo" texto="LabZap" />
       </InicioDePg>
-    <LateralD></LateralD>
-    <LateralE></LateralE>
+    <LateralD/>
+    <LateralE/>
+    <JanelaDeMensagem>
+
+        <ul>
+      {historico}
+        </ul>
+      
     <InputGeral>
-    <InputRemetente texto="Remetente:"/>
-    <InputMsg texto="Msg:"/>
-    <Button></Button>
+    <input type="text" name='name' value={remetente} placeholder='nome' onChange={handleInputRemetente}></input>
+    <input type="text" value={mensagem} placeholder='digite aqui sua mensagem' onChange={handleInputMensagem}></input>
+    <button onClick={handleSubmit}>Enviar mensagem</button>
     </InputGeral>
+    
+    </JanelaDeMensagem>
     <FimDePg>
     <Rodape texto="Copyright © 2022 José Augusto"/> 
     </FimDePg>

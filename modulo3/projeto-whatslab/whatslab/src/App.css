@@ -7,7 +7,9 @@
   pointer-events: none;
 }
 
-
+.Input-Msg{
+  margin-left: 50px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
