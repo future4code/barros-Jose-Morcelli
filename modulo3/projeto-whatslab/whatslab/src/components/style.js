@@ -60,31 +60,35 @@ flex-direction: column;
 justify-content: flex-end;
 border: 1px solid black;
 height: 82vh;
-box-sizing: border-box;
-width: 700px;
+width: 680px;
 margin: auto;
 
 ul{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px 10px;
+    margin: 40px 10px;
     width: 10vw;
-    list-style: none;
+    list-style: none;   
+    
 }
 li{
     display: flex;
-        align-items: center;
-        
-        padding-right: 2vw;
+    margin: 5px;
+    border: 0px solid black;
+    border-radius: 50px;
+    background-color: orange;
+    padding-right: 3vw;
+    
 }
 p:nth-child(1){
     font-weight: bold;
 }
+
 p{
     margin-left:1vw;
-        text-align: left;
-        
+    
+
 }
 `
 

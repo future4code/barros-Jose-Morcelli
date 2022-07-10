@@ -17,7 +17,10 @@ function App() {
   ])
 
   const historico = listaMensagens.map((valor, index)=>{
-    return <li key={index}><p>{valor.rmt}:</p><p>{valor.msg}</p></li>
+    return <li key={index}>
+      <p>{valor.rmt}:</p>
+      <p>{valor.msg}</p>
+      </li>
   })
 
   const handleInputRemetente= (e)=>{
