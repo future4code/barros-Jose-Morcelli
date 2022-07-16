@@ -12,9 +12,7 @@ function App() {
 
   const [remetente, setRemetente]=useState("")
   const [mensagem, setMensagem]=useState("")
-  const [listaMensagens, setListaMensagens]=useState([
-    {rmt: remetente, msg: mensagem},
-  ])
+  const [listaMensagens, setListaMensagens]=useState([])
 
   const historico = listaMensagens.map((valor, index)=>{
     return <li key={index}>
