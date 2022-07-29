@@ -61,7 +61,7 @@ function App() {
       <h3>Cadastro do Usuário:</h3>
       {usariosList.map((usuarios)=>{
         return(
-          <li key={usuarios.id}>{usuarios.name}{usuarios.email}</li>
+          <li key={usuarios.id}>{usuarios.name}{usuarios.email} <button>X</button></li>
           
         )
       })}
