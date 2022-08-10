@@ -12,7 +12,7 @@ function AdminHomePage (){
       }
     return(
         <section>
-      <h1>AdminHomePage</h1>
+      <h1>Painel Administrativo</h1>
       <button onClick={ goToLastPage}>Voltar</button>
       <button onClick={ goToCreateTripPage}>Criar Viagens</button>
       <button >Logout</button>
