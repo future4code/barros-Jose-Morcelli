@@ -1,22 +1,25 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Button, ButtonsDiv, Pages, Title } from "./styles";
 
 function HomePage (){
     const navigate = useNavigate();
 
     const goToListTripsPage = () => {
-        navigate("/ListTripsPage")
+        navigate("/trips/list")
       }
 
       const goToAdminHomePage = () => {
-        navigate("/AdminHomePage")
+        navigate("/login")
       }
     return(
-    <section>
-    <h1>Labe X</h1>
-    <button onClick={ goToListTripsPage}>Ver Viagens</button>
-    <button onClick={goToAdminHomePage}>Area do Administrador</button>
-    </section>
+    <Pages>
+    <Title>Labe X</Title>
+    <ButtonsDiv>
+    <Button onClick={ goToListTripsPage}>Ver Viagens</Button>
+    <Button onClick={goToAdminHomePage}>Area do Administrador</Button>
+    </ButtonsDiv>
+    </Pages>
     );
 }
 

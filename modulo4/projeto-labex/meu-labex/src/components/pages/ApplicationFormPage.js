@@ -1,14 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Button, ButtonsDiv, Pages, Title } from "./styles";
 
-function FormPage (){
+function ApplicationFormPage (){
     const navigate = useNavigate();
     const goToLastPage = () => {
         navigate(-1)
       }
     return(
-        <section>
-        <h1>Inscreva-se</h1>
+        <Pages>
+        <Title>Inscreva-se</Title>
         <select>
         <option>Escolha uma Viagem</option>
         </select>
@@ -19,10 +20,12 @@ function FormPage (){
         <select>
             <option>Escolha um Pais</option>
         </select>
-        <button onClick={ goToLastPage}>Voltar</button>
-        <button >Criar</button>
-        </section>
+        <ButtonsDiv>
+        <Button onClick={ goToLastPage}>Voltar</Button>
+        <Button >Criar</Button>
+        </ButtonsDiv>
+        </Pages>
     );
 }
 
-export default FormPage;
+export default ApplicationFormPage;

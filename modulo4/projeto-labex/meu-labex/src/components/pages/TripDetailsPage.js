@@ -1,8 +1,13 @@
 import React from "react";
+import { Pages, Title } from "./styles";
 
 function TripDetailsPage (){
     return(
-        <h1>TripDetailsPage</h1>
+        <Pages>
+        <Title>TripDetailsPage</Title>
+        <h2>Candidatos Pendentes</h2>
+        <h2>Candidatos Aprovados</h2>
+        </Pages>
     );
 }
 

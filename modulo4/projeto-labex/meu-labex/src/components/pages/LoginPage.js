@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Button, ButtonsDiv, Pages, Title } from "./styles";
 
 function LoginPage (){
     const navigate = useNavigate();
@@ -7,13 +8,15 @@ function LoginPage (){
         navigate(-1)
       }
     return(
-        <section>
-        <h1>LoginPage</h1>
+        <Pages>
+        <Title>Login</Title>
         <input type="email" placeholder="E-mail"></input>
         <input type="password" placeholder="Senha"></input>
-      <button onClick={ goToLastPage}>Voltar</button>
-      <button onClick={""}>Entrar</button>
-      </section>
+        <ButtonsDiv>
+      <Button onClick={ goToLastPage}>Voltar</Button>
+      <Button onClick={""}>Entrar</Button>
+      </ButtonsDiv>
+      </Pages>
     );
 }
 

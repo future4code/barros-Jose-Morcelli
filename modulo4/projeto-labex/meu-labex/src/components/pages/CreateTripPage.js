@@ -1,17 +1,20 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Button, ButtonsDiv, Pages, Title } from "./styles";
 
-function TripPage (){
+function CreateTripPage (){
     const navigate = useNavigate();
     const goToLastPage = () => {
         navigate(-1)
       }
     return(
-        <section>
-        <h1>Criar Viagens</h1>
-        <button onClick={goToLastPage}>Voltar</button>
-        </section>
+        <Pages>
+        <Title>Criar Viagens</Title>
+        <ButtonsDiv>
+        <Button onClick={goToLastPage}>Voltar</Button>
+        </ButtonsDiv>
+        </Pages>
     );
 }
 
-export default TripPage;
+export default CreateTripPage;

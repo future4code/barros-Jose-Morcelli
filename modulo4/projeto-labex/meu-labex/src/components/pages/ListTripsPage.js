@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Button, ButtonsDiv, Pages, Title } from "./styles";
 
 function ListTripsPage (){
     const navigate = useNavigate();
@@ -7,20 +8,22 @@ function ListTripsPage (){
         navigate(-1)
       }
       const goToLoginPage = () => {
-        navigate("/LoginPage")
+        navigate("/login")
       }
 
       const goToApplicationFormPage = () => {
-        navigate("/ApplicationFormPage")
+        navigate("/trips/application")
       }
 
     return(
-        <section>
-        <h1>Lista de Viagens</h1>
-      <button onClick={ goToLastPage}>Voltar</button>
-      <button onClick={ goToLoginPage}>Login</button>
-      <button onClick={ goToApplicationFormPage}>Increva-se</button>
-      </section>
+        <Pages>
+        <Title>Lista de Viagens</Title>
+        <ButtonsDiv>
+      <Button onClick={ goToLastPage}>Voltar</Button>
+      <Button onClick={ goToLoginPage}>Login</Button>
+      <Button onClick={ goToApplicationFormPage}>Increva-se</Button>
+      </ButtonsDiv>
+      </Pages>
     );
 }
 
