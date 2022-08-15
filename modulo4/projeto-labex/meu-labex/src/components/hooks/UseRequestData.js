@@ -1,23 +1,29 @@
-import React,{useEffect, useState} from 'react'
-import axios from 'axios'
+import React, {useState, useEffect} from "react";
+import axios from "axios";
 
-export function UseRequestData(url){
-    const [data, setData] = useState(undefined)
-    const [isLoading, setIsLoading] = useState(undefined)
-    const [erro, setErro] = useState(undefined)
-    
-    useEffect(() => {
-        setIsLoading(true);
-        axios.get(url).then(response =>{
-          setIsLoading(false)
-          setData(response.data)
-        }).catch(error =>{
-          setIsLoading(false)
-          setErro(error)
-        })
-      }, [url])
 
-    return [data,isLoading,erro];
+export const useRequestData = (url) => {
+
+  const [ listTripData ,setListTripData ] = useState([])
+  const [ isloading , setIsloading] = useState(false)
+  const [ listTripDataError, setListTripDataError] = useState([])
+
+  useEffect( () => {
+    setIsloading(true)
+    axios
+      .get(url)
+      .then( (response) => {
+        console.log(response)
+        setIsloading(false)
+        setListTripData(response.data)
+      })
+      .catch( (error) => {
+        setIsloading(false)
+        setListTripDataError(error)
+      })
+
+  },[])
+
+  return [ listTripData, isloading, listTripDataError]
 }
-
 
