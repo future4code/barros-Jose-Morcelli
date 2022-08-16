@@ -1,26 +1,18 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { Button, ButtonsDiv, Pages, Title } from "./styles";
 
-function AdminHomePage (){
-    const navigate = useNavigate();
-    const goToCreateTripPage = () => {
-        navigate("/admin/trips/create")
-      }
-    
-      const goToLastPage = () => {
-        navigate(-1)
-      }
-    return(
-        <Pages>
-      <Title>Painel Administrativo</Title>
-      <ButtonsDiv>
-      <Button onClick={ goToLastPage}>Voltar</Button>
-      <Button onClick={ goToCreateTripPage}>Criar Viagens</Button>
-      <Button>Logout</Button>
-      </ButtonsDiv>
-      </Pages>
-    );
-}
+export const AdminHomePage = () => {
 
-export default AdminHomePage;
+    const navigate = useNavigate()
+    return(
+        <Pages> 
+            <Title>Usuários Aceitos</Title> 
+            <ButtonsDiv>
+             <Button onClick={ () => navigate("/login")}>logout</Button>
+            <Button onClick={ () => navigate("/admin/trips/id")}>Ver detalhes da lista</Button>
+            <Button onClick={ () => navigate("/admin/trips/create")}>Criar novas viagens</Button>
+            </ButtonsDiv>
+        </Pages>
+    )
+}

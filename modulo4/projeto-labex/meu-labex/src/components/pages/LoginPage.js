@@ -1,23 +1,25 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, ButtonsDiv, Pages, Title } from "./styles";
+import { Button, ButtonsDiv, Pages, SubTitle, Title } from "./styles";
 
-function LoginPage (){
-    const navigate = useNavigate();
-    const goToLastPage = () => {
-        navigate(-1)
-      }
+
+export const LoginPage = () => {
+    const navigate = useNavigate()
+
     return(
         <Pages>
-        <Title>Login</Title>
-        <input type="email" placeholder="E-mail"></input>
-        <input type="password" placeholder="Senha"></input>
-        <ButtonsDiv>
-      <Button onClick={ goToLastPage}>Voltar</Button>
-      <Button onClick={""}>Entrar</Button>
-      </ButtonsDiv>
-      </Pages>
-    );
-}
+            <Title>Area de login</Title>
+            <form>
+            <SubTitle htmlFor="email">Digite seu email:</SubTitle>
+            <input type="email" placeholder="E-mail"></input>
+            <SubTitle htmlFor="password">Digite sua senha:</SubTitle>
+            <input type="password" placeholder="senha"></input>
+            <ButtonsDiv>
+            <Button onClick={ () => navigate("/")}>voltar</Button>
+            <Button onClick={ () => navigate("/admin/trip/list")}>Entrar</Button>
+            </ButtonsDiv>
+            </form>
+        </Pages>
 
-export default LoginPage;
+    )
+} 

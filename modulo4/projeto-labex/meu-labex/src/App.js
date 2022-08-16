@@ -1,13 +1,13 @@
-import Router  from './components/pages/Router';
-import './App.css';
-import { GlobalStyle } from './components/pages/styles';
+import React from "react";
+import { RoutesPage } from './components/constants/Routes'
+import { GlobalStyle } from '../src/components/pages/styles';
 
 
 function App() {
   return (
     <>
       <GlobalStyle/>
-      <Router/>
+          <RoutesPage/>
     </>
   );
 }

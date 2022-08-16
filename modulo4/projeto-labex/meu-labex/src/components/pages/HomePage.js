@@ -2,25 +2,17 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, ButtonsDiv, Pages, Title } from "./styles";
 
-function HomePage (){
-    const navigate = useNavigate();
+export const HomePage = () => {
 
-    const goToListTripsPage = () => {
-        navigate("/trips/list")
-      }
+  const navigate = useNavigate()
 
-      const goToAdminHomePage = () => {
-        navigate("/login")
-      }
-    return(
-    <Pages>
-    <Title>Labe X</Title>
-    <ButtonsDiv>
-    <Button onClick={ goToListTripsPage}>Ver Viagens</Button>
-    <Button onClick={goToAdminHomePage}>Area do Administrador</Button>
-    </ButtonsDiv>
-    </Pages>
-    );
+  return(
+      <Pages>
+        <Title>Labe X - Viajando com as Estrelas </Title>
+          <ButtonsDiv>
+          <Button onClick={ () => navigate( "/trip/list" )}>Acesso livre</Button>
+            <Button onClick={ () => navigate( "/login" )}>Login</Button>
+          </ButtonsDiv>
+      </Pages>
+  )
 }
-
-export default HomePage;

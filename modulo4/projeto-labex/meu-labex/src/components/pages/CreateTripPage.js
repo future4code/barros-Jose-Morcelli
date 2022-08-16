@@ -2,19 +2,15 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, ButtonsDiv, Pages, Title } from "./styles";
 
-function CreateTripPage (){
-    const navigate = useNavigate();
-    const goToLastPage = () => {
-        navigate(-1)
-      }
-    return(
+export const CreateTripePage = () => {
+    const navigate = useNavigate()
+    return (
         <Pages>
-        <Title>Criar Viagens</Title>
+        <Title>Criar Viagem</Title>
         <ButtonsDiv>
-        <Button onClick={goToLastPage}>Voltar</Button>
+        <Button onClick={() => navigate(-1)}>Voltar</Button>
+        <Button>Criar</Button>
         </ButtonsDiv>
-        </Pages>
-    );
+   </Pages>
+    )
 }
-
-export default CreateTripPage;

@@ -1,14 +1,16 @@
 import React from "react";
-import { Pages, Title } from "./styles";
+import { useNavigate } from "react-router-dom";
+import { Button, ButtonsDiv, Pages, Title } from './styles';
 
-function TripDetailsPage (){
+export const TripDetailsPage = () => {
+    const navigate = useNavigate()
     return(
         <Pages>
-        <Title>TripDetailsPage</Title>
-        <h2>Candidatos Pendentes</h2>
-        <h2>Candidatos Aprovados</h2>
-        </Pages>
-    );
+            <Title>Lista detalhada</Title>
+            <ButtonsDiv>
+        <Button onClick={() => navigate(-1)}>voltar</Button>
+        </ButtonsDiv>
+        
+       </Pages>
+    )
 }
-
-export default TripDetailsPage;

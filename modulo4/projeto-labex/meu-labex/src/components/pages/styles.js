@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
+import estrelas from '../../img/estrelas.gif'
 
 export const GlobalStyle = createGlobalStyle`
     :root {
@@ -9,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         margin: 0;
         padding: 0;
+        background-image: url(${estrelas});
         box-sizing: border-box;
         font-family: 'Jolly Lodger', cursive;
     }`
@@ -27,6 +29,11 @@ export const Pages = styled.div`
 export const Title = styled.h1`
     color: var(--state-blue);
     font-size: 5rem;
+    display: flex;
+    justify-content: center;
+`
+export const SubTitle = styled.label`
+color: var(--state-blue);
 `
 
 export const Button = styled.button`
@@ -38,6 +45,7 @@ export const Button = styled.button`
     padding: 15px;
     border: solid 1px var(--state-blue);
     box-shadow: 3px 1px 8px #aaa;
+    font-family: 'DynaPuff', cursive;
     :hover {
         cursor: pointer;
         border: 1px solid var(--state-blue);
