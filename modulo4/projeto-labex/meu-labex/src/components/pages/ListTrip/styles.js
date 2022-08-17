@@ -8,6 +8,7 @@ export const Span = styled.span `
     font-size: 23px;
     font-family: 'Jolly Lodger', cursive;
     color: #6A5ACD;
+    margin: 10px;
 `
 export const List = styled.li `
 `

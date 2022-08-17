@@ -12,7 +12,7 @@ export const ListTripPage = () => {
     return(
 
         <Pages>
-        <Title> Para vermos todas as viagens </Title>
+        <Title>Todas as Viagens </Title>
         <ButtonsDiv>
         <Button onClick={ () => navigate(-1)}>Voltar</Button>
         <Button onClick={ () => navigate("/trip/application")}>inscrever-se para viagem</Button>

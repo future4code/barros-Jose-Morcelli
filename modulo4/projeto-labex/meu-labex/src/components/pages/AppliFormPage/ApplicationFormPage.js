@@ -58,7 +58,7 @@ export const ApplicationFormPage = () => {
         />
         <input
           required
-          placeholder="Razão da viagem"
+          placeholder="Motivo da viagem"
           type="text"
           value={inputText}
           onChange={ e => setInputText(e.target.value) }
@@ -75,7 +75,6 @@ export const ApplicationFormPage = () => {
           {Countrys}
         </select>
          <Button type="submit">Enviar</Button> 
-        {/* <input type="submit"/> */}
       </form>
       </ButtonsDiv>
     </Pages>
