@@ -23,7 +23,6 @@ export const Pages = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: (--white);
 `
 
 export const Title = styled.h1`
@@ -34,6 +33,25 @@ export const Title = styled.h1`
 `
 export const SubTitle = styled.label`
 color: var(--state-blue);
+display: flex;
+justify-content: center;
+font-size: 25px;
+margin: 10px;
+`
+
+export const Inputs = styled.input`
+display: flex;
+justify-content: center;
+margin: 20px;
+margin-left: 70px;
+width: 200px;
+`
+export const Selecione = styled.select`
+display: block;
+justify-content: center;
+margin: 20px;
+margin-left: 70px;
+width: 209px;
 `
 
 export const Button = styled.button`
@@ -61,4 +79,24 @@ export const ButtonsDiv = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 30px;
     gap: 15px;`
+    
+
+    export const AstronautaHome = styled.img`
+    width: 350px;
+    margin: -100px;
+    margin-left: 500px;
+    `
+
+    export const Planet = styled.img`
+    width: 150px;
+    margin-top: -160px;
+    `
+
+    export const CaixaInscricao = styled.div`
+    border: black 2px solid;
+    box-shadow: inset 0 0 32px 0 grey, 0 0 32px 0 grey;
+    border-radius: 16px;
+    background-color: var(--white);
+    `

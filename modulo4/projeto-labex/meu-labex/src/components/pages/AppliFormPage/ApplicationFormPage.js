@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { country,url } from '../../constants/constants';
 import { useRequestData } from '../../Hooks/useRequestData'
-import { Button, ButtonsDiv, Pages, Title } from "../styles";
+import { Button, ButtonsDiv, CaixaInscricao, Inputs, Pages, Selecione, SubTitle, Title } from "../styles";
 
 export const ApplicationFormPage = () => {
   const navigate = useNavigate()
@@ -32,51 +32,72 @@ export const ApplicationFormPage = () => {
   return (
     <Pages>
       <Title>Inscreva-se para uma viagem</Title>
-      <ButtonsDiv>
-      <Button onClick={ () => navigate("/trip/list")}>Voltar</Button>
       
-      
-
       <form onSubmit={() => submitForm()}>
-        <select>
+        <CaixaInscricao>
+        <SubTitle>Viagens:</SubTitle>
+        <Selecione>
           <option>Selecione uma viagem</option>
           {namesTrips}
-        </select>
-        <input
+        </Selecione>
+
+        <SubTitle htmlFor="nome">Nome:</SubTitle>
+        <Inputs
+          id="nome"
+          name="name"
+          type="name"
           required
           placeholder="Nome:"
-          type="text"
           value={inputName}
           onChange={ e => setInputName(e.target.value) }
         />
-        <input
+
+        <SubTitle htmlFor="Idade">Idade:</SubTitle>
+        <Inputs
+          id="Idade"
+          name="Idade"
+          type="age"
           required
           placeholder="Idade:"
-          type="number"
           value={inputAge}
           onChange={ e => setInputAge(e.target.value) }
         />
-        <input
+
+        <SubTitle htmlFor="motivo">Motivo:</SubTitle>
+        <Inputs
+          id="motivo"
+          name="motivo"
+          type="text"
           required
           placeholder="Motivo da viagem"
-          type="text"
           value={inputText}
           onChange={ e => setInputText(e.target.value) }
         />
-        <input
+
+        <SubTitle htmlFor="profissao">Profissão:</SubTitle>
+        <Inputs
+          id="profissao"
+          name="profissao"
+          type="text"
           required
           placeholder="Profissão"
-          type="text"
           value={inputProfection}
           onChange={ e => setInputProfection(e.target.value) }
         />
-        <select onChange={ event => setSelectCountry(event.target.value)}>
+
+        <SubTitle htmlFor="paises">Países:</SubTitle>
+        <Selecione onChange={ event => setSelectCountry(event.target.value)}>
           <option>Selecione um País</option>
           {Countrys}
-        </select>
-         <Button type="submit">Enviar</Button> 
+        </Selecione>
+
+        </CaixaInscricao>
+        <ButtonsDiv>
+          <Button onClick={ () => navigate("/trip/list")}>Voltar</Button>
+          <Button type="submit">Enviar</Button> 
+        </ButtonsDiv>
       </form>
-      </ButtonsDiv>
+      
     </Pages>
   )
 }

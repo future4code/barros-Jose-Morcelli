@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { url } from "../constants/constants";
 import { useForm } from "../Hooks/useForm";
-import { Button, ButtonsDiv, Pages, SubTitle, Title } from "./styles";
+import { Button, ButtonsDiv, CaixaInscricao, Inputs, Pages, Selecione, SubTitle, Title } from "./styles";
 
 export const CreateTripePage = () => {
     const navigate = useNavigate()
@@ -21,10 +21,13 @@ export const CreateTripePage = () => {
     }
     return (
         <Pages>
+            
         <Title>Criar Viagem</Title>
         <form onSubmit={fazerLogin}>
+            <CaixaInscricao>
+                <br></br>
             <SubTitle htmlFor="nome">Nome:</SubTitle>
-            <input 
+            <Inputs 
             id="nome"
             name="name"
             type="name" 
@@ -36,7 +39,7 @@ export const CreateTripePage = () => {
             />
             
             <SubTitle htmlFor="planeta">Planeta:</SubTitle>
-            <select>
+            <Selecione>
           <option>Selecione um planeta</option>
           <option>Mercúrio</option>
           <option>Vênus</option>
@@ -46,10 +49,10 @@ export const CreateTripePage = () => {
           <option>Saturno</option>
           <option>Urano</option>
           <option>Netuno</option>
-           </select>
+           </Selecione>
             
             <SubTitle htmlFor="data">Data:</SubTitle>
-            <input 
+            <Inputs 
             id="date"
             name="date"
             type="date" 
@@ -59,8 +62,9 @@ export const CreateTripePage = () => {
             required
             onChange={onChange}
             />
+
             <SubTitle htmlFor="descricao">Descrição:</SubTitle>
-            <input 
+            <Inputs 
             id="descricao"
             name="description"
             type="description" 
@@ -69,8 +73,9 @@ export const CreateTripePage = () => {
             required
             onChange={onChange}
             />
+
             <SubTitle htmlFor="duracao">Duração em Dias:</SubTitle>
-            <input 
+            <Inputs 
             id="duracao"
             name="duration"
             type="durationInDays" 
@@ -79,6 +84,10 @@ export const CreateTripePage = () => {
             required
             onChange={onChange}
             />
+
+            <br></br>
+            </CaixaInscricao>
+
         <ButtonsDiv>
         <Button type="button" onClick={() => navigate(-1)}>Voltar</Button>
         <Button>Criar</Button>

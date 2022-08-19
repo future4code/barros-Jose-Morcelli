@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate,useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button, ButtonsDiv, Pages, Title } from "../styles";
 
 

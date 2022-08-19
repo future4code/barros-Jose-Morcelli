@@ -17,13 +17,15 @@ export const ListTrip = styled.div `
     padding: 10px 5px;
     box-sizing: border-box;
     width: 600px;
-    border: 2px solid #000;
-    border-radius: 20px;
+    border: var(--state-blue) 2px solid;
+    box-shadow: inset 0 0 32px 0 var(--state-blue), 0 0 32px 0 var(--state-blue);
+    border-radius: 16px;
     list-style: none;
     line-height: 1.7;
     font-size: 14px;
     font-family: 'DynaPuff', cursive;
     margin: 3px;
+    background-color: var(--white);
 `
 export const ContainerTrips = styled.div `
     width: 660px;
