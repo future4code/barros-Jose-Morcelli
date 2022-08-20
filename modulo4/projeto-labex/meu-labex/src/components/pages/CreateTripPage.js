@@ -33,7 +33,7 @@ export const CreateTripePage = () => {
             type="name" 
             placeholder="nome da viagem"
             value={body.name}
-            pattern="^.{5}"
+            minLength="5"
             required
             onChange={onChange}
             />
@@ -68,6 +68,7 @@ export const CreateTripePage = () => {
             id="descricao"
             name="description"
             type="description" 
+            minLength="20"
             placeholder="descrição"
             value={body.description}
             required
@@ -77,8 +78,9 @@ export const CreateTripePage = () => {
             <SubTitle htmlFor="duracao">Duração em Dias:</SubTitle>
             <Inputs 
             id="duracao"
-            name="duration"
-            type="durationInDays" 
+            name="durationInDays"
+            type="number" 
+            min="50"
             placeholder="duração"
             value={body.duration}
             required

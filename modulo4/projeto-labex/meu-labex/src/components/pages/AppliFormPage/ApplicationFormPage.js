@@ -45,7 +45,8 @@ export const ApplicationFormPage = () => {
         <Inputs
           id="nome"
           name="name"
-          type="name"
+          type="text"
+          minLength="3"
           required
           placeholder="Nome:"
           value={inputName}
@@ -57,6 +58,8 @@ export const ApplicationFormPage = () => {
           id="Idade"
           name="Idade"
           type="age"
+          min="18"
+          oninvalid="setCustomValidity('Somente números! ')"
           required
           placeholder="Idade:"
           value={inputAge}
@@ -68,6 +71,7 @@ export const ApplicationFormPage = () => {
           id="motivo"
           name="motivo"
           type="text"
+          minLength="30"
           required
           placeholder="Motivo da viagem"
           value={inputText}

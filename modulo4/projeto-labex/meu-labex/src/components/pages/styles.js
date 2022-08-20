@@ -45,6 +45,7 @@ justify-content: center;
 margin: 20px;
 margin-left: 70px;
 width: 200px;
+border-radius: 20px;
 `
 export const Selecione = styled.select`
 display: block;
@@ -52,6 +53,7 @@ justify-content: center;
 margin: 20px;
 margin-left: 70px;
 width: 209px;
+border-radius: 20px;
 `
 
 export const Button = styled.button`
