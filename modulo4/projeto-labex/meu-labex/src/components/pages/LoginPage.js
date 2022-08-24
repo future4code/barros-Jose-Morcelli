@@ -5,27 +5,30 @@ import { useForm } from "../Hooks/useForm";
 import { Button, ButtonsDiv, CaixaInscricao, Inputs, Pages, Planet, SubTitle, Title } from "./styles";
 import axios from "axios"
 import terra from '../../img/terra.gif'
-import * as R from "../constants/Coodinator"
 
 
 export const LoginPage = () => {
     
-    const [body,onChange,clear]=useForm({ email: "", password: ""})
+    const [form,onChange,clear]=useForm({ email: "", password: ""})
     const navigate = useNavigate()
    
     const fazerLogin = (event) => {
         event.preventDefault()
-        axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/juniorp/login", body).
-        then((response)=>{
-            console.log(response.data);
-            localStorage.setItem("token",response.data.token)
-            R.goToTripDetail(navigate)
+        axios.post(`${url}login`, form, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then((response)=>{
+            window.localStorage.setItem("token", response.data.token)
+            navigate("/admin/trips/list")
         })
         .catch((error)=>{
-            console.log("deu erro")
+            window.alert("E-mail e/ou senha incorretos. Verifique as informações e tente novamente.")
         })
         clear();
     }
+    
 
     return(
         <Pages>
@@ -41,10 +44,11 @@ export const LoginPage = () => {
             name="email"
             type="email" 
             placeholder="E-mail"
-            value={body.email}
+            value={form.email}
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             required
             onChange={onChange}
+            autoFocus
             ></Inputs>
 
             <SubTitle htmlFor="password">Digite sua senha:</SubTitle>
@@ -53,7 +57,7 @@ export const LoginPage = () => {
             name="password"
             type="password" 
             placeholder="senha"
-            value={body.password}
+            value={form.password}
             pattern="^.{3,}"
             required
             onChange={onChange}
@@ -63,7 +67,7 @@ export const LoginPage = () => {
 
             <ButtonsDiv>
             <Button type="button"onClick={ () => navigate("/")}>voltar</Button>
-            <Button type="submit"onClick={ () => navigate("/admin/trip/list")}>Entrar</Button>
+            <Button type="submit">Entrar</Button>
             </ButtonsDiv>
             </form>
         </Pages>

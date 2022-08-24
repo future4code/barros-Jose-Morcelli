@@ -18,7 +18,7 @@ export const RoutesPage = () => {
         <Route path="/trip/list" element={ <ListTripPage/> }/>
         <Route path="/trip/application" element={ <ApplicationFormPage/>}/>
         <Route path="/login" element={ <LoginPage/> }/>
-        <Route path="/admin/trip/list" element={ <AdminHomePage/> }/>
+        <Route path="/admin/trips/list" element={ <AdminHomePage/> }/>
         <Route path="/admin/trips/:id" element={ <TripDetailsPage/>}/>
         <Route path="/admin/trips/create" element={ <CreateTripePage/>}/>
       </Routes>

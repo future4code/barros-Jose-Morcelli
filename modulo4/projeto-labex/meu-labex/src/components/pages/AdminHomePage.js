@@ -5,33 +5,48 @@ import marte from "../../img/marte.gif"
 import { useProtectePage } from "../Hooks/useProtectePage";
 import { url } from "../constants/constants";
 import { goToLogin } from "../constants/Coodinator";
-import { useRequestData } from "../Hooks/useRequestData";
+import CardTrip from "../CardTrips/CardTrip";
+import useRequestDataTrips from "../Hooks/useRequestDataTrips";
+import loading from '../../img/loading.gif'
 
 export const AdminHomePage = () => {
 
     useProtectePage();
     const navigate= useNavigate()
-    const data=useRequestData(`${url}juniorp/trip/reTQKzHx3izgvBMzsFTi`,
+    const [data,isLoading]=useRequestDataTrips(`${url}trips`,
     {headers:{
         auth:localStorage.getItem("token")
 
-    }}
-    );
+    }
+    });
+
     console.log(data);
      const logOut=()=>{
          localStorage.removeItem("token")
          goToLogin(navigate)
      }
 
+    const myTrips=data&&data.trips.map((trip)=>{
+        return (
+            <CardTrip key={trip.id} name={trip.name}/>
+        )
+    })
+
     return(
         <Pages> 
             <Planet src={marte}></Planet>
-            <Title>Usuários Aceitos</Title> 
-            <ButtonsDiv>
-             <Button onClick={() => navigate("/login")}>logout</Button>
-            <Button onClick={ () => navigate("/admin/trips/id")}>Ver detalhes da lista</Button>
-            <Button onClick={ () => navigate("/admin/trips/create")}>Criar novas viagens</Button>
-            </ButtonsDiv>
-        </Pages>
+        <Title>Painel Administrativo</Title> 
+        <div>            
+            {isLoading&&<img src={loading}/>}
+            {!isLoading&&data&&data.trips&&myTrips}
+            {!isLoading&&data&&!data.trips&&"Ops! Algo deu errado!"}
+        </div>
+        
+        
+        <ButtonsDiv>
+         <Button onClick={logOut}>logout</Button>
+        <Button onClick={ () => navigate("/admin/trips/create")}>Criar novas viagens</Button>
+        </ButtonsDiv>
+    </Pages>
     )
 }

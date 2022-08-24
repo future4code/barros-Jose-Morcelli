@@ -102,3 +102,51 @@ export const ButtonsDiv = styled.div`
     border-radius: 16px;
     background-color: var(--white);
     `
+
+    //--------------------------------------------------------------
+
+    export const Trip=styled.div`
+    display: grid;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 35px;
+    -moz-box-align: center;
+    align-items: center;
+    width: 35vw;
+    grid-template-columns: 85% 15%;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    width: 600px;
+    border: var(--state-blue) 2px solid;
+    box-shadow: inset 0 0 32px 0 var(--state-blue), 0 0 32px 0 var(--state-blue);
+    border-radius: 16px;
+    list-style: none;
+    line-height: 1.7;
+    font-size: 10px;
+    font-family: 'DynaPuff', cursive;
+    margin: 5px;
+    background-color: var(--white);
+    :hover{
+        cursor: pointer;
+        background-color: var(--white);
+        border: 1px solid var(--state-blue);
+        color: var(--state-blue)
+    }
+    :active {
+        transform:scale(0.98)
+    }
+    h1{
+        margin: 20px;
+    }
+
+    `
+    export const ImagemDeletar=styled.img`
+    width: 60px;
+    :hover{
+        cursor: pointer;
+        width: 57px;
+    }
+    :active {
+        transform:scale(0.98)
+    }
+    `

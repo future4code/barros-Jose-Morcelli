@@ -6,10 +6,7 @@ import { Button, ButtonsDiv, CaixaInscricao, Inputs, Pages, Selecione, SubTitle,
 
 export const ApplicationFormPage = () => {
   const navigate = useNavigate()
-  const [tripName , tripNameIsLoading, errotripName] = useRequestData( `${url}trips` )
-
-
-
+  const [tripName] = useRequestData( `${url}trips` )
   const [ inputName, setInputName] = useState("")
   const [ inputAge, setInputAge] = useState("")
   const [ inputText, setInputText] = useState("")
@@ -53,11 +50,11 @@ export const ApplicationFormPage = () => {
           onChange={ e => setInputName(e.target.value) }
         />
 
-        <SubTitle htmlFor="Idade">Idade:</SubTitle>
+        <SubTitle htmlFor="age">Idade:</SubTitle>
         <Inputs
-          id="Idade"
-          name="Idade"
-          type="age"
+          id="age"
+          name="age"
+          type="number"
           min="18"
           oninvalid="setCustomValidity('Somente números! ')"
           required
@@ -91,6 +88,7 @@ export const ApplicationFormPage = () => {
 
         <SubTitle htmlFor="paises">Países:</SubTitle>
         <Selecione onChange={ event => setSelectCountry(event.target.value)}>
+          
           <option>Selecione um País</option>
           {Countrys}
         </Selecione>

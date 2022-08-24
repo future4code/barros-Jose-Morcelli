@@ -7,11 +7,11 @@ import { Button, ButtonsDiv, CaixaInscricao, Inputs, Pages, Selecione, SubTitle,
 
 export const CreateTripePage = () => {
     const navigate = useNavigate()
-    const [body,onChange,clear]=useForm({ name: "", planet: "", date:"", description:"", duration:""})
+    const [form,onChange,clear]=useForm({ name: "", planet: "", date:"", description:"", durationInDays:""})
    
     const fazerLogin = (event) => {
         event.preventDefault()
-        axios.post(`${url}darvas/login`, body).
+        axios.post(`${url}login`, form).
         then((response)=>{
             console.log(response.data);
         }).catch((error)=>{
@@ -32,7 +32,7 @@ export const CreateTripePage = () => {
             name="name"
             type="name" 
             placeholder="nome da viagem"
-            value={body.name}
+            value={form.name}
             minLength="5"
             required
             onChange={onChange}
@@ -58,7 +58,7 @@ export const CreateTripePage = () => {
             type="date" 
             min={"2023-01-01"}
             placeholder="data"
-            value={body.date}
+            value={form.date}
             required
             onChange={onChange}
             />
@@ -70,21 +70,21 @@ export const CreateTripePage = () => {
             type="description" 
             minLength="20"
             placeholder="descrição"
-            value={body.description}
+            value={form.description}
             required
             onChange={onChange}
             />
 
-            <SubTitle htmlFor="duracao">Duração em Dias:</SubTitle>
+            <SubTitle>Duração em Dias:</SubTitle>
             <Inputs 
-            id="duracao"
-            name="durationInDays"
+            id="durationInDays"
+            name="durationInDays" 
+            value={form.durationInDays} 
             type="number" 
-            min="50"
-            placeholder="duração"
-            value={body.duration}
-            required
+            placeholder="Duração da viagem em dias" 
             onChange={onChange}
+            min={50}
+            required
             />
 
             <br></br>

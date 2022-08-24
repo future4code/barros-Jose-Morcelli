@@ -4,6 +4,8 @@ import { Button, ButtonsDiv, Pages, Title } from './styles';
 
 export const TripDetailsPage = () => {
     const navigate = useNavigate()
+
+    
     return(
         <Pages>
             <Title>Lista detalhada</Title>
