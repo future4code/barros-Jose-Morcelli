@@ -7,7 +7,7 @@ import { LoginPage } from "../pages/LoginPage"
 import { ApplicationFormPage } from '../pages/AppliFormPage/ApplicationFormPage'
 import { AdminHomePage } from "../pages/AdminHomePage";
 import { CreateTripePage } from '../pages/CreateTripPage';
-import { TripDetailsPage } from "../pages/TripDetailsPage";
+import  {TripDetailsPage}  from "../pages/TripDetailsPage";
 
 export const RoutesPage = () => {
 

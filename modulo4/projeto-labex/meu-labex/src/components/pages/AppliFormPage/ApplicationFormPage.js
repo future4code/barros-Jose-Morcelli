@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { country,url } from '../../constants/constants';
-import { useRequestData } from '../../Hooks/useRequestData'
+import {useRequestData} from "../../Hooks/useRequestData";
 import { Button, ButtonsDiv, CaixaInscricao, Inputs, Pages, Selecione, SubTitle, Title } from "../styles";
 
 export const ApplicationFormPage = () => {
@@ -12,7 +12,6 @@ export const ApplicationFormPage = () => {
   const [ inputText, setInputText] = useState("")
   const [ inputProfection, setInputProfection] = useState("")
   const [ selectCountry, setSelectCountry] = useState("")
-
 
 
   const submitForm = (event) => {
@@ -56,7 +55,7 @@ export const ApplicationFormPage = () => {
           name="age"
           type="number"
           min="18"
-          oninvalid="setCustomValidity('Somente números! ')"
+          oninvalid="setCustomValidity('Apenas números! ')"
           required
           placeholder="Idade:"
           value={inputAge}

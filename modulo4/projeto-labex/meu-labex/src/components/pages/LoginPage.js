@@ -33,7 +33,7 @@ export const LoginPage = () => {
     return(
         <Pages>
             <Planet src={terra}></Planet>
-            <Title>Area de login</Title>
+            <Title>Area de Login</Title>
             
             <form onSubmit={fazerLogin}>
         <CaixaInscricao>

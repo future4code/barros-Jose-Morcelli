@@ -11,8 +11,7 @@ export const useRequestData = (url) => {
 
   useEffect( () => {
     setIsloading(true)
-    axios
-      .get(url)
+    axios.get(url)
       .then( (response) => {
         console.log(response)
         setIsloading(false)

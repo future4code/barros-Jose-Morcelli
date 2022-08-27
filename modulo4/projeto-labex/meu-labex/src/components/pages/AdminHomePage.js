@@ -1,52 +1,69 @@
-import React from "react";
+import React,{useState} from "react";
+import * as styles from "../pages/styles"
 import { useNavigate } from "react-router-dom";
-import { Button, ButtonsDiv, Pages, Planet, Title } from "./styles";
-import marte from "../../img/marte.gif"
+import { useRequestData } from "../Hooks/useRequestData";
 import { useProtectePage } from "../Hooks/useProtectePage";
+import deletar from "../../img/deletar.png"
+import loading from "../../img/loading.gif"
+import marte from "../../img/marte.gif"
+import axios from "axios";
 import { url } from "../constants/constants";
-import { goToLogin } from "../constants/Coodinator";
-import CardTrip from "../CardTrips/CardTrip";
-import useRequestDataTrips from "../Hooks/useRequestDataTrips";
-import loading from '../../img/loading.gif'
 
 export const AdminHomePage = () => {
-
-    useProtectePage();
-    const navigate= useNavigate()
-    const [data,isLoading]=useRequestDataTrips(`${url}trips`,
-    {headers:{
-        auth:localStorage.getItem("token")
-
-    }
-    });
-
-    console.log(data);
-     const logOut=()=>{
-         localStorage.removeItem("token")
-         goToLogin(navigate)
-     }
-
-    const myTrips=data&&data.trips.map((trip)=>{
-        return (
-            <CardTrip key={trip.id} name={trip.name}/>
-        )
+  useProtectePage()
+  const navigate = useNavigate()
+  const [dataTrip , dataTripIsLoading, erroDataTrip] = useRequestData( `${url}trips` )
+  
+  const logout = () => {
+    localStorage.clear()
+    navigate("/login")
+  }
+  
+  const getDetailTrip = (tripName,tripId) => {
+    localStorage.setItem("tripId",tripId)
+    navigate(`/admin/trips/${tripName}`)
+  }
+  
+  const [header, setHeader ] = useState( {headers: {auth: localStorage.getItem("token")}});
+  const deleteTrip = (tripName,tripId) => {
+    axios
+    .delete(`${url}trips/${tripId}`,header)
+    .then( (response) => {
+      alert(tripName + " Viagem excluida com sucesso! Pode comemorar.")
     })
+    .catch( (error) => {
+      alert("Não foi dessa vez!")
+    })
+  }
+  
 
-    return(
-        <Pages> 
-            <Planet src={marte}></Planet>
-        <Title>Painel Administrativo</Title> 
-        <div>            
-            {isLoading&&<img src={loading}/>}
-            {!isLoading&&data&&data.trips&&myTrips}
-            {!isLoading&&data&&!data.trips&&"Ops! Algo deu errado!"}
+  const renderListTrip = dataTrip.trips && dataTrip.trips.map( (trip) => {
+    return (
+      
+      <styles.Trip key={trip.id}  >
+        <div  onClick={ () => getDetailTrip(trip.name,trip.id)}>
+          <h1> {trip.name} </h1>  
         </div>
-        
-        
-        <ButtonsDiv>
-         <Button onClick={logOut}>logout</Button>
-        <Button onClick={ () => navigate("/admin/trips/create")}>Criar novas viagens</Button>
-        </ButtonsDiv>
-    </Pages>
+        <styles.ImagemDeletar onClick={ ()=> deleteTrip(trip.name,trip.id)} src={deletar} />
+      </styles.Trip>
+    )
+  })
+
+  return(
+    <styles.Pages>  
+     
+     <styles.Planet src={marte}></styles.Planet>
+      
+      <styles.Title>Painel Administrativo</styles.Title>
+      { dataTripIsLoading && <img src={loading}/> }
+      {!dataTripIsLoading && dataTrip && renderListTrip }
+      {!dataTripIsLoading && !dataTrip && erroDataTrip}
+    
+
+<styles.ButtonsDiv>
+<styles.Button onClick={ logout }>Logout</styles.Button>
+<styles.Button onClick={ () => navigate("/admin/trips/create")}>Criar Viagens</styles.Button> 
+</styles.ButtonsDiv>
+</styles.Pages>
     )
 }

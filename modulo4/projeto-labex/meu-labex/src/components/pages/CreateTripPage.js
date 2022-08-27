@@ -8,22 +8,31 @@ import { Button, ButtonsDiv, CaixaInscricao, Inputs, Pages, Selecione, SubTitle,
 export const CreateTripePage = () => {
     const navigate = useNavigate()
     const [form,onChange,clear]=useForm({ name: "", planet: "", date:"", description:"", durationInDays:""})
-   
-    const fazerLogin = (event) => {
+    const token = window.localStorage.getItem("token")
+
+    const CreateTrip = (event) => {
         event.preventDefault()
-        axios.post(`${url}login`, form).
-        then((response)=>{
-            console.log(response.data);
-        }).catch((error)=>{
-            console.log("deu erro")
+        axios.post(`${url}trips`, form, {
+            headers: {
+                "Content-Type": "application/json",
+                "auth": token
+            }
         })
-        clear();
+        .then((response) => {
+            window.alert("Viagem criada com sucesso!")
+            clear()
+        })
+        .catch((error) => {
+            console.log(error.response.data)
+        })
     }
+
+
     return (
         <Pages>
             
         <Title>Criar Viagem</Title>
-        <form onSubmit={fazerLogin}>
+        <form onSubmit={CreateTrip}>
             <CaixaInscricao>
                 <br></br>
             <SubTitle htmlFor="nome">Nome:</SubTitle>
@@ -91,7 +100,7 @@ export const CreateTripePage = () => {
             </CaixaInscricao>
 
         <ButtonsDiv>
-        <Button type="button" onClick={() => navigate(-1)}>Voltar</Button>
+        <Button onClick={() => navigate(-1)}>Voltar</Button>
         <Button>Criar</Button>
         </ButtonsDiv>
         </form>

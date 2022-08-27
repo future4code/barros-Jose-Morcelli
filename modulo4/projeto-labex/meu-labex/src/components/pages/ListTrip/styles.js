@@ -10,8 +10,6 @@ export const Span = styled.span `
     color: #6A5ACD;
     margin: 10px;
 `
-export const List = styled.li `
-`
 
 export const ListTrip = styled.div `
     padding: 10px 5px;
@@ -27,7 +25,7 @@ export const ListTrip = styled.div `
     margin: 3px;
     background-color: var(--white);
 `
-export const ContainerTrips = styled.div `
+export const Trips = styled.div `
     width: 660px;
     height: 100vh;
     display: flex;

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { ContainerTrips, ListTrip, List, Span } from "./styles";
+import { ListTrip, Span, Trips } from "./styles";
 import { Title,ButtonsDiv, Button } from "../styles";
 import loanding from '../../../img/loading.gif'
 import { useRequestData } from '../../Hooks/useRequestData'
@@ -13,18 +13,18 @@ export const ListTripPage = () => {
   const renderListTrip = dataTrip.trips&&dataTrip.trips.map( (list) => {
     return (
       <ListTrip key={list.id}>
-        <List> <Span>Planeta:</Span> {list.planet} </List>
-        <List> <Span>Nome:</Span> {list.name}</List>
-        <List> <Span>Descrição:</Span> {list.description} </List>
-        <List> <Span>Data:</Span> {list.date} </List>
-        <List> <Span>Duração:</Span> {list.durationInDays} Dias </List>
+        <li> <Span>Planeta:</Span> {list.planet} </li>
+        <li> <Span>Nome:</Span> {list.name}</li>
+        <li> <Span>Descrição:</Span> {list.description} </li>
+        <li> <Span>Data:</Span> {list.date} </li>
+        <li> <Span>Duração:</Span> {list.durationInDays} Dias </li>
       </ListTrip>
     )
   })   
 
 
   return(
-    <ContainerTrips>
+    <Trips>
       <Title>Lista de Viagens</Title>
       { dataTripIsLoading && <img src={loanding}/> }
       {!dataTripIsLoading && dataTrip && renderListTrip }
@@ -34,7 +34,7 @@ export const ListTripPage = () => {
         <Button onClick={ () => navigate("/")}>Voltar</Button>
         <Button onClick={ () => navigate("/trip/application")}>inscrever-se para viagem</Button>
       </ButtonsDiv>
-    </ContainerTrips>
+    </Trips>
   )  
 }
 
