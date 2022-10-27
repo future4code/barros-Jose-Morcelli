@@ -7,10 +7,6 @@ app.use(express.json())
 
 app.use(cors())
 
-app.listen(3003, () => {
-    console.log("Servidor Executando em http://localhost:3003");
-});
-
 //---------------------------------------Exercício 1----------------------------------------------------------------
 
 app.get("/", (req: Request, res: Response) => {          
@@ -143,3 +139,7 @@ app.get('/users/posts/:userId', (req: Request, res: Response) => {
     }
   
   })
+
+  app.listen(3003, () => {
+    console.log("Servidor Executando em http://localhost:3003");
+});
