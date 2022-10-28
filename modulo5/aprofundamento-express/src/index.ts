@@ -76,8 +76,53 @@ if (!statusLista) {
 
 //----------------------------------------Exercício 5------------------------------------------------
 
-app.post("/adicionar", (req: Request, res: Response) => {
+app.post("/criar", (req: Request, res: Response) => {
+const {id, title, completed, userId} = req.body
+let criandoAfazeres = {
+    id,
+    title,
+    completed,
+    userId
+}
+
+if( !id || !title || !completed === undefined || !userId){
+   return res.status(400).send("Adicione os parametros necessários")
+}
+
+tipoDeAfazeres.push(criandoAfazeres)
+res.status(200).send(tipoDeAfazeres)
+
 })
+
+//----------------------------------------Exercício 6------------------------------------------------
+
+app.put("/editar/:id", (req: Request, res: Response) => {
+const fazerId = Number(req.params.id)
+const userId = req.headers.authorization
+
+if(!userId) {
+    res.status(400).send("Falha!! Preencha o id de usuário!.")
+} else if(!fazerId) {
+    res.status(400).send("Falha!! Preencha o id tarefa que altera o status.")
+    } else {
+        for(let i = 0; i < tipoDeAfazeres.length; i ++) {
+            if(tipoDeAfazeres[i].id === fazerId) {
+                tipoDeAfazeres[i].completed = !tipoDeAfazeres[i].completed
+            }
+        }
+    }
+    res.status(200).send(tipoDeAfazeres)
+})
+
+//----------------------------------------Exercício 7------------------------------------------------
+
+app.delete("/deletar", (req: Request,res: Response) => {
+
+})
+
+//----------------------------------------Exercício 8------------------------------------------------
+
+
 
 app.listen(3003, () => {
     console.log("Servidor Executando em http://localhost:3003")
