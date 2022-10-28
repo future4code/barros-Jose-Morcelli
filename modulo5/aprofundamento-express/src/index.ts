@@ -116,12 +116,45 @@ if(!userId) {
 
 //----------------------------------------Exercício 7------------------------------------------------
 
-app.delete("/deletar", (req: Request,res: Response) => {
-
+app.delete("/deletar/:id", (req: Request,res: Response) => {
+ const deletarAfazer = Number(req.params.id)
+ const userId = req.headers.authorization
+ let listaNova= tipoDeAfazeres
+ 
+ if(!userId) {
+    res.status(400).send("Falha!! Preencha o id de usuário.")
+    } else if(!deletarAfazer) {
+        res.status(400).send("Falha!! Preencha o id tarefa que deseja excluir.")
+    } else {
+         listaNova = tipoDeAfazeres.filter((deletar)=>{
+            return deletar.id !== deletarAfazer
+        })
+ }
+ res.status(200).send(listaNova)
 })
 
 //----------------------------------------Exercício 8------------------------------------------------
 
+app.get("/procurar/:id", (req: Request, res: Response) => {
+ const userId = Number(req.params.id)
+
+ if(!userId) {
+    res.status(400).send("Falha!! Preencha o id do usuário.")
+    }
+    const tarefas = tipoDeAfazeres.filter((tarefa) =>{
+        return tarefa.userId === userId
+    })
+
+    if(!tarefas){
+        return res.status(400).send("Falha!! Não foi encontrado nenhuma tarefa")
+    }
+    res.status(200).send(tarefas)
+})
+
+
+//----------------------------------------Exercício 9------------------------------------------------
+
+//R: https://documenter.getpostman.com/view/22376367/2s8YKCFhn3
 
 
 app.listen(3003, () => {
