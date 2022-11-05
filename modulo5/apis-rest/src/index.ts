@@ -57,24 +57,75 @@ app.get("/usersType", (req: Request ,res: Response) => {
 //R: Eu garanti que os types seriam validos utilizando o if para garantir a segurança dos dados do ENUM.
 
 //--------------------------------------Exercício 3-------------------------------
+
 app.get('/userName',(req: Request,res: Response ) =>{
 let errorCode = 400
 let filterName
 
 try{
-
-}catch
+    const data = req.query.name as string
+    if (!data) {
+        errorCode = 422
+        throw new Error(" Erro query invalido.")
+    } else if (data) {
+        filterName = users.filter((user) => {
+            return user.name === data
+        })
+        if(filterName.length === 0) {
+            errorCode = 404
+            throw new Error(" Usuário não encontrado.")
+    }
+}
+res.status(200).send(filterName)
+} catch (error: any) {
+    res.status(errorCode).send(error.message)
+}
 })
 
 //a. Qual é o tipo de envio de parâmetro que costuma ser utilizado por aqui?
-//R:
+//R: O tipo de envio deve ser Get para retornar o array.
 
 //b. Altere este endpoint para que ele devolva uma mensagem de erro caso nenhum usuário tenha sido encontrado.
-//R:
+//R: Feito.
 
 //--------------------------------------Exercício 4-------------------------------
-app.post('/',(req: Request,res: Response ) => {
+app.post('/addUser',(req: Request,res: Response ) => {
+    let errorCode = 400
+
+    try {
+        const {name, email, type, age} = req.body
+
+        if(!name || !email || !type || !age){
+            errorCode=422
+            throw new Error('Falta passar algum parâmetro')
+        }
+
+        if(type.toUpperCase() !== "ADMIN" && type.toUpperCase() !=="NORMAL"){
+            errorCode=402
+            throw new Error('Insira um tipo válido: "ADMIN" ou "Normal"')
+        }
+
+        const newUser:allTypes.User = {
+            id: Math.random(),
+            name: name,
+            email: email,
+            type: type,
+            age: age
+        }
+
+        users.push(newUser)
+        res.status(201).send(users)
+
+    } catch (error:any) {
+            res.status(errorCode).send(error.message)
+    }
 })
+
+//a. Mude o método do endpoint para PUT. O que mudou?
+//R: Continua adicionando usuário, ao invés de alterar
+
+//b. Você considera o método PUT apropriado para esta transação? Por quê?
+//R: Não, ele adiciona novo objeto com novos dados
 
 //--------------------------------------------------------------------------------
 
