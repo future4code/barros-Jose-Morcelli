@@ -1,43 +1,30 @@
-import express, {Request,Response} from "express"
-import connection from './dataBase/connection'
-import cors from 'cors'
-
-const app = express()
-
-app.use(express.json())
-
-app.use(cors())
-
-/*export const getAllUsers = async(req: Request,res: Response): Promise<void> =>{
-    try {
-       const users = await selectAllUsers()
- 
-       if(!users.length){
-          res.statusCode = 404
-          throw new Error("No recipes found")
-       }
- 
-       res.status(200).send(users)
-       
-    } catch (error) {
-       console.log(error)
-       res.send(error.message || error.sqlMessage)
-    }
- }
-
- export default async function selectAllUsers():Promise<any> {
-    const result = await connection.raw(`
-       SELECT id, name, email, type
-       FROM aula48_exercicio;
-    `)
- 
-    return result[0]
- }*/
+import { app }  from "./app"
+import { getUsersName } from "./endpoints/getUsersName"
+import { getUsersType } from "./endpoints/getUsersType"
+import { getUsersOrder } from "./endpoints/getUsersOrder"
+import { getUsersPage } from "./endpoints/getUsersPage"
+import { getAllUsers } from "./endpoints/getAllUsers"
 
  //-----------------------Exercício 1 --------------------------------
 
  //a)R:
+ app.get("/users/filterByName", getUsersName)
 
-app.listen(3003, () => {
-    console.log("Servidor rodando na porta http://localhost:3003");
-});
+ //b)R:
+ app.get("/users/:type", getUsersType)
+
+ //-----------------------Exercício 2 --------------------------------
+
+ //R:
+ app.get("/users/order", getUsersOrder)
+
+ //-----------------------Exercício 3 --------------------------------
+
+ //R:
+ app.get("/users/page,", getUsersPage)
+
+ //-----------------------Exercício 4 --------------------------------
+
+ //R:
+app.get("/users/:type", getAllUsers)
+
