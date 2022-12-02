@@ -1,0 +1,26 @@
+GET https://viacep.com.br/ws/03461090/json/
+Content-Type: application/json
+
+###
+
+GET https://viacep.com.br/ws/03461080/json/
+Content-Type: application/json
+
+###
+
+POST http://localhost:3003/address
+Content-Type: application/json
+
+{
+    "cep": "03461090"
+}
+
+###
+POST http://localhost:3003/register
+Content-Type: application/json
+
+{
+    "cep": "02462090",
+    "number": 314,
+    "complement": "casa"
+}
