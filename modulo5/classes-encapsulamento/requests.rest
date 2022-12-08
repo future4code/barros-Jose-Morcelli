@@ -6,8 +6,8 @@ POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "email": "teste@gmail.com",
-    "password": "teste123"
+    "email": "jota@gmail.com",
+    "password": "jota123"
 }
 
 ### Exercício 2 - Get users
@@ -18,8 +18,8 @@ POST http://localhost:3003/products
 Content-Type: application/json
 
 {
-    "name": "Teste Product",
-    "price": 500
+    "name": "PC Gamer",
+    "price": 9500
 }
 
 ### Exercício 4 - Get products
@@ -30,9 +30,9 @@ POST http://localhost:3003/purchases
 Content-Type: application/json
 
 {
-    "userId": "103",
+    "userId": "104",
     "productId": "203",
-    "quantity": 4
+    "quantity": 6
 }
 
 ### Exercício 6 - Get user purchases
