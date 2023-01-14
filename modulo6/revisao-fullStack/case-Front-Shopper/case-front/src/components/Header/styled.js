@@ -6,10 +6,8 @@ export const MyHeader = styled.header`
     justify-content: center;
     background-color: #10453b;
     height: 12vw;
-
 `
 
 export const MyLogo = styled.img`
     height: 100%;
-    
 `

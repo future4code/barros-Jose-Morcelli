@@ -5,9 +5,7 @@ import { MyHeader, MyLogo } from './styled';
 export default function Header() {
  return (
    <MyHeader>
-
         <MyLogo src={minimarket}/>
-
    </MyHeader>
  );
 }
