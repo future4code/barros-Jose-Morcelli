@@ -1,0 +1,29 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "José",
+    "email": "joselabenu@email.com",
+    "password": "23432535"
+}
+
+### Get all Users
+
+GET http://localhost:3003/user/users
+
+### Create a new movie
+
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "HO Telefone Preto",
+    "description": "Finney Shaw, de 13 anos, é sequestrado por um sádico assassino mascarado e mantido em um porão à prova de som. Até que um telefone desconectado na parede começa a tocar, e ele logo descobre que pode ouvir as vozes das vítimas anteriores do maníaco.",
+    "duration_in_minutes": "102",
+    "year_of_release": "2021"
+}
+
+### Get all Movies
+
+GET http://localhost:3003/movie/movies
+
