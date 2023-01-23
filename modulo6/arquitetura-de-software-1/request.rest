@@ -1,0 +1,18 @@
+### CREATE USER
+POST http://localhost:3003/createUser 
+Content-Type: application/json
+
+{
+    "name": "Polly Station", 
+    "email": "pollystation@gmail.com", 
+    "password": "0052832ab"
+
+}
+
+### GET ALL USERS
+
+GET http://localhost:3003/all
+
+### DELETE USER
+DELETE http://localhost:3003/1 
+Content-Type: application/json
