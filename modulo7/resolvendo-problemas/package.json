@@ -1,0 +1,19 @@
+{
+  "name": "modulo7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "hash-tables": "clear && tsnd --transpile-only --ignore-watch node_modules src/hash_tables",
+    "exercicio-1": "clear && tsnd --transpile-only --ignore-watch node_modules src/exercicio-1",
+    "exerccicio-2": "clear && tsnd --transpile-only --ignore-watch node_modules src/exercicio-2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.15.5",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.2"
+  }
+}
